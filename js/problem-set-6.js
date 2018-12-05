@@ -43,6 +43,22 @@ ctx.strokeText('Hello, World!', 10, 50);
  */
 
 function drawRectangle() {
+  const canvas2 = document.getElementById('canvas2');
+  const ctx = canvas2.getContext('2d');
+  let height = Number(prompt("Please enter a height."));
+  let width =  Number(prompt("Please enter a width."));
+  let x =  Number(prompt("Please enter a x value."));
+  let y =  Number(prompt("Please enter a y value."));
+
+if (height < 1){
+  height = alert("Your height was too small.");
+} else if (width < 1){
+  width = alert("Your width was too small.");
+} else if (x < 5 ){
+  x = alert("Your x value was too small.");
+} else if (y < 5 ){
+  y = alert("Your y value was too small.");
+}
 
 }
 

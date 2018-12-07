@@ -93,8 +93,15 @@ ctx.strokeRect(x, y, width, height);
  * unsupported color.
  */
 
-function drawColoredRectangle() {
-
+  function drawColoredRectangle() {
+  const canvas = document.getElementById('canvas3');
+  const ctx = canvas.getContext('2d');
+  let color = prompt("Color:");
+  srting(color);
+  if (color === "black" || color === "blue"){
+  ctx.strokeRect(10, 10, 100, 50);
+    ctx.fillStyle = color;
+  }
 }
 
 /*
@@ -127,6 +134,17 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
+  const canvas = document.getElementById('canvas4');
+  const ctx = canvas.getContext('2d');
+  let s1 = Number(prompt("Slide 1:"));
+  let s2 = Number(prompt("Slide 2:"));
+  let s3 = Number(prompt("Slide 3:"));
+
+  if (s1 > 512 || s1 <= 0 || s1 >= s2 || s1 >= s3){
+  alert("That is not a valid right triangle.");
+} else if (s2 > 1024 || s2 <= s1 || s2 >= s3 || s2 <= 0){
+  alert("That is not a valid right triangle.");
+} else if (s3 > 512 || s3 )
 
 }
 

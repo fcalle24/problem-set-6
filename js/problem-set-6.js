@@ -144,7 +144,15 @@ function drawTriangle() {
   alert("That is not a valid right triangle.");
 } else if (s2 > 1024 || s2 <= s1 || s2 >= s3 || s2 <= 0){
   alert("That is not a valid right triangle.");
-} else if (s3 > 512 || s3 )
+} else if (s3 > 512 || s3 <= 0 || s3 <= s1 || s3 <= s2){
+  alert("That is not a valid right triangle.");
+}
+
+ctx.beginPath();
+ctx.moveTo(10, 10);
+ctx.lineTo(10, (s1 + 10));
+ctx.lineTo((s2 + 10), (s1 + 10));
+ctx.stroke()
 
 }
 
@@ -190,6 +198,20 @@ function drawSmileyFace() {
  */
 
 function drawStar() {
+  const canvas = document.getElementById('canvas6');
+  const ctx = canvas.getContext('2d');
+  let or = Number(prompt("Outer Raduius:"));
+  let ir = Number(prompt("Inner Raduius:"));
+
+if (or <= ir){
+  alert("Your outer radius must be larger than your inner radius.");
+} else if (or <= 1){
+  alert("Your outer radius is too small");
+} else if (ir <= 0){
+  alert("Your inner radius is too small");
+} else if (Number == NaN){
+  alert("One of your inputs is not a number.");
+}
 
 }
 

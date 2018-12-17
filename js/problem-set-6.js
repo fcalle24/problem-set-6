@@ -98,9 +98,10 @@ ctx.strokeRect(x, y, width, height);
   const ctx = canvas.getContext('2d');
   let color = prompt("Color:");
   srting(color);
-  if (color === "black" || color === "blue"){
-  ctx.strokeRect(10, 10, 100, 50);
+ if (color == "black" || color == "blue" || color =="green" || color == "orange" || color == "purple" || color == "red" || color == "yellow"){  ctx.strokeRect(10, 10, 100, 50);
     ctx.fillStyle = color;
+    op.fillRect(10, 10, 100, 50);
+    ctx.fill()
   }
 }
 
@@ -152,6 +153,7 @@ ctx.beginPath();
 ctx.moveTo(10, 10);
 ctx.lineTo(10, (s1 + 10));
 ctx.lineTo((s2 + 10), (s1 + 10));
+ctx.lineTo(10, 10);
 ctx.stroke()
 
 }
@@ -176,6 +178,25 @@ ctx.stroke()
  */
 
 function drawSmileyFace() {
+  const canvas = document.getElementById('canvas5');
+  const ctx = canvas.getContext('2d');
+  let head = Number(prompt("Radius:"))
+  let smile = head * 0.7
+  let eye = head * 0.1
+
+  ctx.beginPath();
+ctx.arc((head + 10), (head + 10), head, 0, 2 * Math.PI);
+ctx.closePath();
+
+ctx.moveTo()
+
+ctx.moveTo(head / 100, (head + 10));
+
+ctx.arc((head + 10), (head +10), smile, 0, Math.PI);
+ctx.closePath();
+
+ctx.stroke();
+
 
 }
 

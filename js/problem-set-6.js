@@ -404,5 +404,72 @@ function drawPyramid() {
  */
 
 function drawHouse() {
-
+ const canvas = document.getElementById('canvas9');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  let houseColor = prompt("House Color:");
+  let doorColor = prompt("Front Door Color:");
+  
+   if ((houseColor == "blue" || houseColor == "brown"|| houseColor == "green" || houseColor == "orange" || houseColor == "purple" || houseColor == "red" || houseColor == "yellow") && (doorColor == "blue" || doorColor == "brown"|| doorColor == "green" || doorColor == "orange" || doorColor == "purple" || doorColor == "red" || doorColor == "yellow")){
+      ctx.fillStyle= houseColor;
+    ctx.strokeStyle= 'black';
+    ctx.beginPath();
+    ctx.strokeRect(150,canvas.height-460,700,450);
+    ctx.fillRect(150,canvas.height-460,700,450);
+    ctx.closePath();
+    
+    ctx.fillStyle='gray';
+    ctx.strokeStyle= 'black';
+    ctx.beginPath();
+    ctx.moveTo(150, 300);
+    ctx.lineTo(500, 10);
+    ctx.lineTo(850, 300);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+    
+    ctx.fillStyle= doorColor;
+    ctx.strokeStyle= 'black';
+    ctx.beginPath();
+    ctx.strokeRect(450, canvas.height-160, 100, 150);
+    ctx.fillRect(450, canvas.height-160, 100, 150);
+    ctx.closePath();
+    
+    ctx.strokeStyle = 'black';
+    ctx.fillStyle = 'gold';
+    ctx.beginPath();
+    ctx.arc(535,670,7,0,Math.PI*2);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+    
+    ctx.fillStyle= 'lightBlue';
+    ctx.strokeStyle= 'black';
+    ctx.beginPath();
+    ctx.strokeRect(250, 375, 80, 80);
+    ctx.fillRect(250, 375, 80, 80);
+    ctx.closePath();
+    ctx.fillStyle= 'lightBlue';
+    ctx.strokeStyle='black';
+    ctx.beginPath();
+    ctx.strokeRect(670, 375, 80, 80);
+    ctx.fillRect(670, 375, 80, 80);
+    ctx.closePath();
+    ctx.fillStyle= 'lightBlue';
+    ctx.strokeStyle= 'black';
+    ctx.beginPath();
+    ctx.strokeRect(250, 375, 80, 80);
+    ctx.fillRect(250, 600, 80, 80);
+    ctx.closePath();
+    ctx.fillStyle= 'lightBlue';
+    ctx.strokeStyle= 'black';
+    ctx.beginPath();
+    ctx.strokeRect(250, 375, 80, 80);
+    ctx.fillRect(670, 600, 80, 80);
+    ctx.closePath();
+  } else {
+    alert("One of the colors you inputted is not supported.");
+  }
 }
+     

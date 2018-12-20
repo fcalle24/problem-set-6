@@ -291,7 +291,12 @@ if (or <= ir){
  */
 
 function drawStopSign() {
-
+ const canvas = document.getElementById('canvas7');
+  const ctx = canvas.getContext('2d');
+  
+ ctx.beginPath (); 
+  
+  
 }
 
 /*
@@ -313,7 +318,32 @@ function drawStopSign() {
  */
 
 function drawPyramid() {
+ const canvas = document.getElementById('canvas8');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  let length = Number(prompt("Length:"));
+  if (isNaN(length)){
+     alert("Your input is not a number.");
+  } else if (input > 100) {
+    alert("The pyramid will not fit on the canvas.");
+} 
+  
+  let x = 10;
+  let y = canvas.height-10;
+  let i = 0;
+  let line = 1;
 
+  while (i < 5){  
+    for(let j=0 + line;j<=5;j++){
+      ctx.strokeRect(x,y-length,length,length);
+      x+=length;
+    }
+    x=10+(length/2)*line;
+    y-=length;
+    line++;
+    i++;
+  
 }
 
 /*

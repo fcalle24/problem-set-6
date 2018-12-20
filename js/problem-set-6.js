@@ -373,7 +373,7 @@ function drawPyramid() {
     i++;
   
 }
-
+}
 /*
  * House. 7 points.
  *

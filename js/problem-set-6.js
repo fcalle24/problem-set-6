@@ -181,24 +181,50 @@ function drawSmileyFace() {
   const canvas = document.getElementById('canvas5');
   const ctx = canvas.getContext('2d');
   let head = Number(prompt("Radius:"))
+  
+  if (head <= 0){
+    alert ("Your radius is too small.");
+  } else if (head >= 251){
+    alert("The smiley face will not fit on the canvas.");
+  } else if (isNaN(head)) {
+         alert("Your input is not a number.");
+       } else {
+
   let smile = head * 0.7
   let eye = head * 0.1
+  let a = (head / 100);
+  let b = (head * 2 + 10);
+  let c = (head * 2 / 3 + 10);
+  let d = (head * 2 / 3 * 2 + 10);
+
+   ctx.beginPath();
+  ctx.arc((head + 10), (head + 10), head, 0, Math.PI * 2, true); 
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.moveTo(b, (head + 10));
 
   ctx.beginPath();
-ctx.arc((head + 10), (head + 10), head, 0, 2 * Math.PI);
-ctx.closePath();
+  ctx.arc((head + 10), (head + 10), (head * 0.7), 0, Math.PI, false);  
+  ctx.stroke();
+  ctx.closePath();
 
-ctx.moveTo()
+  ctx.moveTo(c, head);
 
-ctx.moveTo(head / 100, (head + 10));
+  ctx.beginPath();
+  ctx.arc(c, (smile + 10), (eye), 0, Math.PI * 2, true);
+  ctx.stroke();
+  ctx.closePath();
 
-ctx.arc((head + 10), (head +10), smile, 0, Math.PI);
-ctx.closePath();
+  ctx.moveTo(d, head);
 
-ctx.stroke();
-
-
+  ctx.beginPath();
+  ctx.arc(d, (smile + 10), (eye), 0, Math.PI * 2, true);
+  ctx.stroke();
+  ctx.closePath();
+       }
 }
+
 
 /*
  * Star. 9 points.

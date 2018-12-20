@@ -98,14 +98,17 @@ ctx.strokeRect(x, y, width, height);
   function drawColoredRectangle() {
   const canvas = document.getElementById('canvas3');
   const ctx = canvas.getContext('2d');
-  let color = prompt("Color:");
-  srting(color);
- if (color == "black" || color == "blue" || color =="green" || color == "orange" || color == "purple" || color == "red" || color == "yellow"){  ctx.strokeRect(10, 10, 100, 50);
+  let color = String(prompt("Color:"));
+ if (color == "black" || color == "blue" || color =="green" || color == "orange" || color == "purple" || color == "red" || color == "yellow"){
     ctx.fillStyle = color;
-    op.fillRect(10, 10, 100, 50);
+    ctx.fillRect(10, 10, 100, 50);
     ctx.fill()
+  } else {
+    alert(color+" is not a supported color");
+    ctx.clearRect(0, 0, 1024, 512);
   }
 }
+
 
 /*
  * Triangle. 5 points.

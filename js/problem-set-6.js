@@ -301,8 +301,29 @@ function drawStopSign() {
  const canvas = document.getElementById('canvas7');
   const ctx = canvas.getContext('2d');
   
- ctx.beginPath (); 
+  let l = 80;
+  let s = l * Math.sqrt(1/2);
+  let x = 10;
+  let y = 10;
   
+   ctx.beginPath (); 
+  ctx.moveTo(x, y = y + 60);
+  ctx.lineTo(x, y = y + l);
+  ctx.lineTo(x = x + s, y = y +s);
+  ctx.lineTo(x = x + l, y);
+  ctx.lineTo(x = x + s, y = y - s);
+  ctx.lineTo(x, y = y - l);
+  ctx.lineTo(x = x -s, y = y - s);
+  ctx.lineTo(x = x - l, y);
+  ctx.lineTo(x = x - s, y = y + s);
+  ctx.fillStyle = 'red';
+  ctx.fill();
+  ctx.closePath();
+  
+   ctx.fillStyle = "white";
+  ctx.font = "65px Sans-Serif";
+  ctx.fillText("STOP", 18, 130);
+  ctx.fillStyle == "white";
   
 }
 

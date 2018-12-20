@@ -221,8 +221,10 @@ ctx.stroke();
 function drawStar() {
   const canvas = document.getElementById('canvas6');
   const ctx = canvas.getContext('2d');
-  let or = Number(prompt("Outer Raduius:"));
-  let ir = Number(prompt("Inner Raduius:"));
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  let or = Math.floor(Number(prompt("Outer Radius:")));
+  let ir = Math.floor (Number(prompt("Inner Radius:")));
 
 if (or <= ir){
   alert("Your outer radius must be larger than your inner radius.");
@@ -230,10 +232,21 @@ if (or <= ir){
   alert("Your outer radius is too small");
 } else if (ir <= 0){
   alert("Your inner radius is too small");
-} else if (Number == NaN){
+} else if (isNaN(or)|| isNaN(ir)){
   alert("One of your inputs is not a number.");
-}
+} else {
+  ctx.moveTo(125, 125 - outer);
+    let x = 1.5;
+  
+  for (let i = 0 ; i < 5; i++) {
+      x += 0.2;
+      ctx.lineTo((inner * Math.cos(x * Math.PI)) + 125, (inner * Math.sin(x * Math.PI)) + 125);
+      x += 0.2;
+      ctx.lineTo((outer * Math.cos(x * Math.PI)) + 125, (outer * Math.sin(x * Math.PI)) + 125);
+    }
 
+    ctx.stroke();
+  }
 }
 
 /*

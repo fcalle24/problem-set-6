@@ -235,14 +235,14 @@ if (or <= ir){
 } else if (isNaN(or)|| isNaN(ir)){
   alert("One of your inputs is not a number.");
 } else {
-  ctx.moveTo(125, 125 - outer);
+  ctx.moveTo(125, 125 - or);
     let x = 1.5;
   
   for (let i = 0 ; i < 5; i++) {
       x += 0.2;
-      ctx.lineTo((inner * Math.cos(x * Math.PI)) + 125, (inner * Math.sin(x * Math.PI)) + 125);
+      ctx.lineTo((ir * Math.cos(x * Math.PI)) + 125, (ir * Math.sin(x * Math.PI)) + 125);
       x += 0.2;
-      ctx.lineTo((outer * Math.cos(x * Math.PI)) + 125, (outer * Math.sin(x * Math.PI)) + 125);
+      ctx.lineTo((or * Math.cos(x * Math.PI)) + 125, (or * Math.sin(x * Math.PI)) + 125);
     }
 
     ctx.stroke();

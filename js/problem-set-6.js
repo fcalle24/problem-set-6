@@ -62,6 +62,8 @@ if (height < 1){
   alert("The rectangle will not fit on the canvas.");
 } else if (y + height > 512){
   alert("The rectangle will not fit on the canvas.");
+} else if (isNaN (height) || isNaN (width) || isNaN (x) || isNaN (y)) {
+  alert("One of your inputs is not a number.")
 }
 
 ctx.strokeRect(x, y, width, height);
@@ -141,12 +143,14 @@ function drawTriangle() {
   let s2 = Number(prompt("Slide 2:"));
   let s3 = Number(prompt("Slide 3:"));
 
-  if (s1 > 512 || s1 <= 0 || s1 >= s2 || s1 >= s3){
+  if (s1 > 502 || s1 <= 0 || s1 > s2 || s1 > s3){
   alert("That is not a valid right triangle.");
-} else if (s2 > 1024 || s2 <= s1 || s2 >= s3 || s2 <= 0){
+} else if (s2 > 1014 || s2 < s1 || s2 > s3){
   alert("That is not a valid right triangle.");
-} else if (s3 > 512 || s3 <= 0 || s3 <= s1 || s3 <= s2){
+} else if ((s1 * s1) + (s2 * s2) != (s3 * s3)){
   alert("That is not a valid right triangle.");
+} else if (isNaN (s1) || isNaN (s2) || isNaN (s3)){
+  alert("One of your inputs is not a number.");
 }
 
 ctx.beginPath();
